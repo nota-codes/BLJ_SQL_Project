@@ -38,3 +38,9 @@ WHERE Professor.Nachname = 'van ''t Hoff';
 SELECT TOP 1 Vorname
 FROM Assistent
 ORDER BY Geburtsdatum ASC;
+
+
+SELECT v1.Titel AS Vorgänger, v2.Titel AS Nachfolger 
+FROM Vorlesung_Vorgänger vor 
+INNER JOIN Vorlesung v1 ON vor.VorgängerID = v1.VorlesungID 
+INNER JOIN Vorlesung v2 ON vor.NachfolgerID = v2.VorlesungID;
