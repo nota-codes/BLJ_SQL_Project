@@ -38,3 +38,5 @@ WHERE Professor.Nachname = 'van ''t Hoff';
 SELECT TOP 1 Vorname
 FROM Assistent
 ORDER BY Geburtsdatum ASC;
+
+SELECT COUNT(Wohnort) FROM Student WHERE Wohnort = 'Basel' OR Wohnort = 'Bern'
