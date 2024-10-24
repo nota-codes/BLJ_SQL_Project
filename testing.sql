@@ -44,3 +44,12 @@ SELECT v1.Titel AS Vorgänger, v2.Titel AS Nachfolger
 FROM Vorlesung_Vorgänger vor 
 INNER JOIN Vorlesung v1 ON vor.VorgängerID = v1.VorlesungID 
 INNER JOIN Vorlesung v2 ON vor.NachfolgerID = v2.VorlesungID;
+SELECT COUNT(Wohnort) FROM Student WHERE Wohnort = 'Basel' OR Wohnort = 'Bern'
+
+SELECT TOP 1 Assistent.Vorname,
+    CASE 
+        WHEN Assistent.Professor IS NOT NULL THEN 'Ja'
+        ELSE 'Nein'
+    END AS Hat_Chef
+FROM Assistent 
+ORDER BY Assistent.Geburtsdatum ASC;
