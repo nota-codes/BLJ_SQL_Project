@@ -40,3 +40,11 @@ FROM Assistent
 ORDER BY Geburtsdatum ASC;
 
 SELECT COUNT(Wohnort) FROM Student WHERE Wohnort = 'Basel' OR Wohnort = 'Bern'
+
+SELECT TOP 1 Assistent.Vorname,
+    CASE 
+        WHEN Assistent.Professor IS NOT NULL THEN 'Ja'
+        ELSE 'Nein'
+    END AS Hat_Chef
+FROM Assistent 
+ORDER BY Assistent.Geburtsdatum ASC;
