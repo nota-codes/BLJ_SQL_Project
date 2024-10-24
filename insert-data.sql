@@ -110,4 +110,37 @@ VALUES
 ((SELECT Matrikelnummer FROM Student WHERE Matrikelnummer = '09-7270-8'), (SELECT VorlesungID FROM Vorlesung WHERE Titel = 'Biochemie'), '2020-05-25 08:30', 4.5, (SELECT ProfessorID FROM Professor WHERE Nachname = 'Röntgen'));
 
 
+UPDATE Student
+SET Wohnort = CASE
+    WHEN Matrikelnummer = '09-4845-0' THEN 'Bern'
+    WHEN Matrikelnummer = '12-5776-4' THEN 'Solothurn'
+    WHEN Matrikelnummer = '09-7270-8' THEN 'Thun'
+    WHEN Matrikelnummer = '08-5694-8' THEN 'Sempach'
+    WHEN Matrikelnummer = '09-6537-7' THEN 'Bern'
+    WHEN Matrikelnummer = '10-4336-3' THEN 'Basel'
+    WHEN Matrikelnummer = '09-1079-4' THEN 'Baden'
+    WHEN Matrikelnummer = '10-5068-5' THEN 'Wettingen'
+    WHEN Matrikelnummer = '09-9370-0' THEN 'Unterlunkhofen'
+    WHEN Matrikelnummer = '09-0523-5' THEN 'Hochdorf'
+    WHEN Matrikelnummer = '09-9376-6' THEN 'Courtedoux'
+    WHEN Matrikelnummer = '14-0556-8' THEN 'Solothurn'
+    WHEN Matrikelnummer = '09-0665-1' THEN 'Lurtigen'
+    WHEN Matrikelnummer = '11-8456-6' THEN 'Bern'
+    WHEN Matrikelnummer = '12-0948-3' THEN 'Riehen'
+    WHEN Matrikelnummer = '13-3225-2' THEN 'Knutwil'
+    WHEN Matrikelnummer = '13-5660-2' THEN 'Muttenz'
+    WHEN Matrikelnummer = '07-0633-6' THEN 'Birr'
+    WHEN Matrikelnummer = '10-1471-6' THEN 'Olten'
+    WHEN Matrikelnummer = '10-2466-6' THEN 'Burgdorf'
+    WHEN Matrikelnummer = '12-8867-9' THEN 'Langenthal'
+    ELSE Wohnort
+END
+WHERE Matrikelnummer IN (
+    '09-4845-0', '12-5776-4', '09-7270-8', '08-5694-8', 
+    '09-6537-7', '10-4336-3', '09-1079-4', '10-5068-5', 
+    '09-9370-0', '09-0523-5', '09-9376-6', '14-0556-8', 
+    '09-0665-1', '11-8456-6', '12-0948-3', '13-3225-2', 
+    '13-5660-2', '07-0633-6', '10-1471-6', '10-2466-6', 
+    '12-8867-9'
+);
 

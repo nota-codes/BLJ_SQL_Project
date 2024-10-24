@@ -8,7 +8,7 @@ CREATE TABLE Student (
     Matrikelnummer varchar(10) PRIMARY KEY,
     Vorname varchar(50) NOT NULL,
     Nachname varchar(50) NOT NULL,
-    Eintrittsdatum smalldatetime NOT NULL
+    Eintrittsdatum smalldatetime NOT NULL,
 );
 
 CREATE TABLE Professor (
@@ -62,3 +62,5 @@ CREATE TABLE Vorlesung_Vorgänger (
     FOREIGN KEY (VorgängerID) REFERENCES Vorlesung(VorlesungID),
     PRIMARY KEY (NachfolgerID, VorgängerID)
 );
+
+ALTER TABLE Student ADD Wohnort varchar(50);
